@@ -7,13 +7,18 @@ Another way to get just consonants would be to use string.ascii_lowercase
 """
 import random
 
-VOWELS = "aeiou"
-CONSONANTS = "bcdfghjklmnpqrstvwxyz"
+VOWELS = "aeiou#"
+CONSONANTS = "bcdfghjklmnpqrstvwxyz%"
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+word_format = ""
+rand_int = random.randint(0, 20)
 
-word_format = "ccvcvvc"
+for i in range(0, rand_int):
+    word_format += random.choice(ALPHABET)
 word = ""
-for kind in word_format:
-    if kind == "c":
+
+for kind in word_format.lower():
+    if kind in CONSONANTS:
         word += random.choice(CONSONANTS)
     else:
         word += random.choice(VOWELS)
