@@ -16,7 +16,7 @@ class Car:
     # 6
     def __str__(self):
         """..."""
-        return "{}, {}, {}".format(self.name, self.fuel, self.odometer)
+        return "The {} now has {}L of fuel left and has driven a total of {}km.".format(self.name, self.fuel, self.odometer)
 
     def add_fuel(self, amount):
         """Add amount to the car's fuel."""
