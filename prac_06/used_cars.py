@@ -34,7 +34,6 @@ def main():
     # print("The {}'s fuel is {}L.".format(my_car.name, my_car.fuel))
     # my_car.drive(int(input("How far would you like the car to drive?\n"
     #                        ">")))
-    # print("The {}'s odometer is {}km.".format(my_car.name, my_car.odometer))
     # print(my_car)
 
 
