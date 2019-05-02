@@ -1,0 +1,36 @@
+BoxLayout:
+    orientation: "vertical"
+    BoxLayout:
+        BoxLayout:
+            orientation: "horizontal"
+            TextInput:
+                id: input_text
+                text: ""
+                font_size: 48
+                multiline: False
+                on_text_validate: app.handle_press()
+                on_text: app.conversion()
+        BoxLayout:
+            orientation: "vertical"
+            Button:
+                id: up_button
+                text: "Up"
+                font_size: 48
+                on_press: app.handle_increment(1)
+                on_text: app.conversion()
+            Button:
+                id: down_button
+                text: "Down"
+                font_size: 48
+                on_press: app.handle_increment(-1)
+                on_text: app.conversion()
+#    BoxLayout:
+#        Button:
+#            text: "Convert miles to kilometres"
+#            font_size: 48
+#            on_press: app.conversion()
+    BoxLayout:
+        Label:
+            id: output_text
+            text: app.message
+            font_size: 48
