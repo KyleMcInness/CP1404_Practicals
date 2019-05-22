@@ -16,8 +16,10 @@ def main():
     for key in key_to_extension:
         choice = input("What category would you like to sort {} files into? ".format(key))
         chosen_categories.append(choice)
-        if not os.path.isdir(choice):
-            os.mkdir("{}".format(choice))
+        try:
+            os.mkdir('{}'.format(choice))
+        except FileExistsError:
+            pass
         for extension in extensions:
             if "{}".format(key) == extension[1]:
                 shutil.move(extension[0] + '.' + extension[1], choice)

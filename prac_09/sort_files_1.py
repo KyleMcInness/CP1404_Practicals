@@ -10,8 +10,10 @@ def main():
     extensions = [filename.split('.') for filename in os.listdir()]
 
     for extension in extensions:
-        if not os.path.isdir(extension[1]):
-            os.mkdir("{}".format(extension[1]))
+        try:
+            os.mkdir('{}'.format(extension[1]))
+        except FileExistsError:
+            pass
         shutil.move(extension[0] + "." + extension[1], extension[1])
 
 
